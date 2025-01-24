@@ -5,10 +5,27 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float moveSpeed;
     [SerializeField] float strafeSpeed;
-// Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] float jumpPower;
+
+    bool isGrounded;
+    float heightCheck = 1.3f;
+    bool isJumping;
+
+    Rigidbody rb;      
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, heightCheck);
+        if (isGrounded & Input.GetKey(KeyCode.Space)) {
+            isJumping = true;
+        }
+
     }
 
     // Update is called once per frame
@@ -29,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += transform.right * strafeSpeed;
         }
-
+        if (isJumping)
+        {
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            isJumping = false;
+        }
     }
 }
