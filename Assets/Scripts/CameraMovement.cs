@@ -12,9 +12,9 @@ public class CameraMovement : MonoBehaviour
     private void Update()
     { 
         transform.Rotate(new Vector3(0.0f, Input.mousePositionDelta.x, 0.0f));
-
         Camera.main.transform.Rotate(-Input.mousePositionDelta.y, 0.0f, 0.0f);
-        Debug.Log(Camera.main.transform.localRotation.eulerAngles.x);
+
+        // Below fixes bug where screen can go upside-down, still occurs at start or game somehow though
         if (Camera.main.transform.localRotation.eulerAngles.x > 45.0f && Camera.main.transform.localRotation.eulerAngles.x < 315.0f)
         {
             if (Camera.main.transform.localRotation.eulerAngles.x < 180.0f)
