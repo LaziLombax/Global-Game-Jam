@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: d84268709d11078d11005b9844295342
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8225
+  packageName: Toon Clouds
+  packageVersion: 1.2.2
+  assetPath: Assets/Toon Clouds/Standard Assets/Toon Shading/Sources/Shaders/Toony-Basic.shader
+  uploadId: 380989

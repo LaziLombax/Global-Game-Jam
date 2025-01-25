@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: bef4c3451d55cc6468e284a431c1f14e
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8225
+  packageName: Toon Clouds
+  packageVersion: 1.2.2
+  assetPath: Assets/Toon Clouds/Scripts/SmoothFollow.cs
+  uploadId: 380989
