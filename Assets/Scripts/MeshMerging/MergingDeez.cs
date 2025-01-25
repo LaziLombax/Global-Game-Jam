@@ -53,7 +53,7 @@ public class MergingDeez : MonoBehaviour
             MergeCubes(tempVert, otherMeshtrans.position, hitPoint
                 , other.transform, other.collider.GetComponent<MeshFilter>().mesh.triangles);
             
-            
+            Destroy(other.gameObject);
             runCollisionOnThis = false;
         }
     }
@@ -69,6 +69,11 @@ public class MergingDeez : MonoBehaviour
         Debug.LogWarning($"mesh 1 vertices length: {ourVerts.Length} and mesh 2 vertice length is {otherMeshVerts.Length}");
         
         vertices = new Vector3[otherMeshVerts.Length + ourVerts.Length];
+
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            vertices[i] = -Vector3.one;
+        }
         
         //this mesh's vertices
         AppendArray(vertices, ourVerts, calculateNewOffset(transform.position, newMeshCentre), transform);
@@ -142,7 +147,44 @@ public class MergingDeez : MonoBehaviour
 
         MeshCollider collider = mergedMesh.AddComponent<MeshCollider>();
         collider.convex = true;
+
+        Vector3[] tempVerts2 = collider.sharedMesh.vertices;
+
+        int[] tempTris2 = collider.sharedMesh.triangles; 
         
+        // mish.Clear();
+        
+        
+        //creation of new mesh
+        GameObject mergedMesh1 = Instantiate(new GameObject(), newMeshCentre, Quaternion.identity);
+
+        mergedMesh1.name = "merged";
+        
+        
+        MeshFilter mf1 = mergedMesh1.AddComponent<MeshFilter>();
+        MeshRenderer mr1 = mergedMesh1.AddComponent<MeshRenderer>();
+
+        Mesh mish1 = new Mesh();
+        
+        mf1.mesh = collider.sharedMesh;
+        mf1.sharedMesh = collider.sharedMesh;
+        mish1.vertices = mf1.mesh.vertices;
+        mish1.triangles = mf1.mesh.triangles;
+        mr1.materials[0] = defaultMat;
+        
+        //uv generation
+        Vector2[] uvs1 = new Vector2[tempVerts2.Length];
+        
+        for (int i = 0; i < uvs1.Length; i++)
+        {
+            uvs1[i] = new Vector2(tempVerts2[i].x, tempVerts2[i].z);
+        }
+
+        mish1.uv = uvs1;
+        
+        // Recalculate bounds and normals
+        mish1.RecalculateBounds();
+        mish1.RecalculateNormals();
         
         Rigidbody rb = mergedMesh.AddComponent<Rigidbody>();
         rb.useGravity = false;
@@ -208,7 +250,7 @@ public class MergingDeez : MonoBehaviour
         
         
         //find startpoint
-        while (ArrayToAppend[j] != Vector3.zero)
+        while (ArrayToAppend[j] != -Vector3.one)
         {
             j++;
         }
@@ -255,7 +297,9 @@ public class MergingDeez : MonoBehaviour
     }
     
 }
-
+/// <summary>
+/// 
+/// </summary>
 [Serializable]
 public class MeshDataContainer
 {
