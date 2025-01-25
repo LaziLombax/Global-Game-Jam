@@ -10378,15 +10378,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8689911477931146066, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: jumpPower
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8689911477931146066, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: moveSpeed
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8689911477931146066, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: strafeSpeed
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 9005356397730479980, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: m_Drag
@@ -10394,7 +10394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005356397730479980, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 9005356397730479980, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: m_Constraints
@@ -10402,7 +10402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005356397730479980, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005356397730479980, guid: 3a4e70cdabcedc74585a502e7a7cd0e9, type: 3}
       propertyPath: m_IsKinematic
