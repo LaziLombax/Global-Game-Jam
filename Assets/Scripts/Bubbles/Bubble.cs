@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BubbleTemp", menuName = "Scriptable Objects/BubbleTemp")]
-public class BubbleTemp : MonoBehaviour, IBubble
+public class Bubble : MonoBehaviour, IBubble
 {
     //fields
     [SerializeField] private float radius;
@@ -16,12 +16,20 @@ public class BubbleTemp : MonoBehaviour, IBubble
         {
             return radius;
         }
+        set
+        {
+            radius = value;
+        }
     }
     public float Flotability
     {
         get
         {
             return flotability;
+        }
+        set
+        {
+            flotability = value;
         }
     }
     public float Lifetime
@@ -30,12 +38,20 @@ public class BubbleTemp : MonoBehaviour, IBubble
         {
             return lifetime;
         }
+        set
+        {
+            lifetime = value;
+        }
     }
     public BubbleType Type
     {
         get
         {
             return type;
+        }
+        set
+        {
+            type = value;
         }
     }
 }
