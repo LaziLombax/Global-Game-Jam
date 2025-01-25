@@ -8,12 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpPower;
 
     private float defaultSpeed = 0f;
+    private float defaultStrafe = 0f;
     
     bool isGrounded;
 
     public float groundDrag = 20f;
-    private float airMulti = 0.01f;
-    float heightCheck = 1.3f;
+    private float airMulti = 0.005f;
+    float heightCheck = 1.2f;
     bool isJumping;
 
     Rigidbody rb;      
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        defaultSpeed = moveSpeed;
+        defaultStrafe = strafeSpeed;
     }
 
     private void Update()
@@ -77,8 +80,8 @@ public class PlayerMovement : MonoBehaviour
         //manipulates drag depending on if grounded or not
         if (isGrounded)
         {
-            moveSpeed = 0.1f;
-            strafeSpeed = 0.1f;
+            moveSpeed = defaultSpeed;
+            strafeSpeed = defaultStrafe;
             //jumpReady();
             rb.linearDamping = groundDrag;
         }
