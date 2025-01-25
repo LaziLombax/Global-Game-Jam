@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/LevelDecoration.meta
 guid: b41953fdf4b3c5246a36490dcd6e7921
 folderAsset: yes
 DefaultImporter:
+========
+guid: e369f5374fa19c24caa8f863ed31f2dc
+PrefabImporter:
+>>>>>>>> de:Assets/Prefabs/JackBubbleMerger.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
