@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 59934243818336763}
   - component: {fileID: -5442825366545671788}
   - component: {fileID: 4613507183043334718}
+  - component: {fileID: 2632619605131066152}
+  - component: {fileID: 4128104120425132709}
   - component: {fileID: 5268817886160231042}
   m_Layer: 3
   m_Name: JackBubbleMerger
@@ -136,6 +138,35 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2632619605131066152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486575616466686334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f46f02f75d5b9f14ea8e72bdbe43cfe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.3
+  flotability: 0
+  lifetime: 3
+  type: 1
+--- !u!114 &4128104120425132709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486575616466686334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bf1b2618b4d7f4cb95df96fe782107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalBubblesInCluster: 1
 --- !u!54 &5268817886160231042
 Rigidbody:
   m_ObjectHideFlags: 0

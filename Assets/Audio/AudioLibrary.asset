@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 0}
-  myPlayerAudio: []
+  myPlayerAudio:
+  - clipName: 
+    clipFile: {fileID: 0}
+    volume: 0.337
   myGameAudio: []
   myUIAudio: []

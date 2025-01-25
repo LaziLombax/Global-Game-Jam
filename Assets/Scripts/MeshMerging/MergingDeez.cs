@@ -19,6 +19,8 @@ public class MergingDeez : MonoBehaviour
     public bool runCollisionOnThis = true;
 
 
+    private BubbleClusterManMa thisClusterAmount;
+    
     private MeshCollider globalCollider;
     private Vector3 globalNewCentre;
     
@@ -26,6 +28,7 @@ public class MergingDeez : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        thisClusterAmount = GetComponent<BubbleClusterManMa>();
         // thisMeshTris = GetComponent<MeshFilter>().mesh.triangles;
         // thisMeshesVertices = GetComponent<MeshFilter>().mesh.vertices;
     }
@@ -183,6 +186,10 @@ public class MergingDeez : MonoBehaviour
         md.closestVerticesTocentre = closestVerticesTocentre;
         md.defaultMat = defaultMat;
 
+        BubbleClusterManMa bcm = mergedMesh.AddComponent<BubbleClusterManMa>();
+        bcm.totalBubblesInCluster = thisClusterAmount.totalBubblesInCluster;
+        bcm.IncrementClusterAmount();
+        
         //StartCoroutine(nameof(somehting));
         
         Destroy(gameObject);

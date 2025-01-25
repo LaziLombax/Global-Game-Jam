@@ -54,4 +54,6 @@ public class Bubble : MonoBehaviour, IBubble
             type = value;
         }
     }
+    
+    
 }
