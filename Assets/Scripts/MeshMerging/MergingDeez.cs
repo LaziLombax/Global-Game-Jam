@@ -167,7 +167,10 @@ public class MergingDeez : MonoBehaviour
         rb.useGravity = false;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-        rb.linearDamping = 10f;
+        rb.linearDamping = 20f;
+        rb.angularDamping = 0.3f;
+        rb.constraints = RigidbodyConstraints.FreezePosition;
+        rb.freezeRotation = true;
 
         MergingDeez md = mergedMesh.AddComponent<MergingDeez>();
         md.defaultMat = defaultMat;
@@ -178,8 +181,9 @@ public class MergingDeez : MonoBehaviour
         md.closestVerticesTocentre = closestVerticesTocentre;
         md.defaultMat = defaultMat;
 
-        StartCoroutine(nameof(somehting));
-
+        //StartCoroutine(nameof(somehting));
+        
+        Destroy(gameObject);
         
         
        
@@ -273,8 +277,12 @@ public class MergingDeez : MonoBehaviour
             //Vector3 globalPoint = transformReference.TransformPoint(arrayTocombine[k]);
             
             ArrayToAppend[i] = arrayTocombine[k] + newOffset; //offsetting the vertice to match our new centre
-             
-            // ArrayToAppend[i].Normalize(); //normalizing the value to give curve
+
+            ArrayToAppend[i] = new Vector3(ArrayToAppend[i].x * transformReference.localScale.x, 
+                ArrayToAppend[i].y * transformReference.localScale.y, 
+                ArrayToAppend[i].z * transformReference.localScale.z) ;
+            
+            //ArrayToAppend[i].Normalize(); //normalizing the value to give curve
             
             k++;
         }

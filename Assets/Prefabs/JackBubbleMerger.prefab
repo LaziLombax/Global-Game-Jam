@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3003331747192233077}
   - component: {fileID: 5886250176392009968}
   - component: {fileID: 59934243818336763}
+  - component: {fileID: -5442825366545671788}
   - component: {fileID: 4613507183043334718}
   - component: {fileID: 5268817886160231042}
   m_Layer: 0
-  m_Name: JackBubble
+  m_Name: JackBubbleMerger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,6 +89,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5442825366545671788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486575616466686334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9af352056d457043a48e8a13d80bd27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vertices: []
+  tris: 
+  defaultMat: {fileID: 0}
+  closestVerticesTocentre:
+  - locationInVerticeA: 0
+    point: {x: 0, y: 0, z: 0}
+  - locationInVerticeA: 0
+    point: {x: 0, y: 0, z: 0}
+  - locationInVerticeA: 0
+    point: {x: 0, y: 0, z: 0}
+  - locationInVerticeA: 0
+    point: {x: 0, y: 0, z: 0}
+  isMerging: 0
+  runCollisionOnThis: 1
 --- !u!135 &4613507183043334718
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -107,7 +134,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5268817886160231042
 Rigidbody:
@@ -134,5 +161,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 2
