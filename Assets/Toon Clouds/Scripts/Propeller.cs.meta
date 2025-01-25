@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 479ad861c9c5e8345ac65f0f2465bed7
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8225
+  packageName: Toon Clouds
+  packageVersion: 1.2.2
+  assetPath: Assets/Toon Clouds/Scripts/Propeller.cs
+  uploadId: 380989

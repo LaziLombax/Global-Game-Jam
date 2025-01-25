@@ -228,8 +228,8 @@ Material:
     - _IridescenceThresholdOffset: 0
     - _Light: 2
     - _LightBands: 3
-    - _LightBandsScale: 1
-    - _LightThreshold: 1
+    - _LightBandsScale: 0.932
+    - _LightThreshold: 0.418
     - _Metallic: 0
     - _NormalMapIntensity: 1
     - _OcclusionStrength: 1

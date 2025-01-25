@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 9feefebb218e9b0488423b8be7fe4b7e
+<<<<<<<< HEAD:Assets/Art/BrokenVector.meta
+guid: f00cda587672800499925963f0ef3960
+========
+guid: 9eb4f0424efb29f4a972345fa86df6cf
+>>>>>>>> art-Yu:Assets/Toon Clouds.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: aee32dc0aecc81348912c8314defa4f8
+<<<<<<<< HEAD:Assets/Scenes/TitleScreen.unity.meta
+guid: 36d6d5c1b629bf846aaa6c48ce0ba827
+========
+guid: 43578e9d0f8e4ec40955b54d33afaa0a
+>>>>>>>> art-Yu:Assets/Scenes/AssetTesting.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
