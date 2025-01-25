@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5442825366545671788}
   - component: {fileID: 4613507183043334718}
   - component: {fileID: 5268817886160231042}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: JackBubbleMerger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: 86c41c9e623743b4d82860ba729436a3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vertices: []
   tris: 
-  defaultMat: {fileID: 0}
+  defaultMat: {fileID: -876546973899608171, guid: 86c41c9e623743b4d82860ba729436a3, type: 3}
   closestVerticesTocentre:
   - locationInVerticeA: 0
     point: {x: 0, y: 0, z: 0}

@@ -102,7 +102,9 @@ public class MergingDeez : MonoBehaviour
         mf.sharedMesh = mish;
         mish.vertices = vertices;
         mr.materials[0] = defaultMat;
-        
+        mr.material = defaultMat;        
+        mergedMesh.layer = 3;
+
         //uv generation
         Vector2[] uvs = new Vector2[vertices.Length];
 
