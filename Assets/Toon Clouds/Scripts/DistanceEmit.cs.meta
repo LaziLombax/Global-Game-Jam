@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 662f29ce72ca7f64a92386122467fc46
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 8225
+  packageName: Toon Clouds
+  packageVersion: 1.2.2
+  assetPath: Assets/Toon Clouds/Scripts/DistanceEmit.cs
+  uploadId: 380989
