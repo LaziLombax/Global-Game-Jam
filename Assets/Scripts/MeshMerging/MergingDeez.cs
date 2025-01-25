@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -16,7 +17,10 @@ public class MergingDeez : MonoBehaviour
     
     public bool isMerging = false;
     public bool runCollisionOnThis = true;
-    
+
+
+    private MeshCollider globalCollider;
+    private Vector3 globalNewCentre;
     
     public ContactPoint[] contacts;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -50,8 +54,8 @@ public class MergingDeez : MonoBehaviour
             isMerging = true;
             Debug.LogWarning("merging in attempt");
             //call merge attempt function
-            MergeCubes(tempVert, otherMeshtrans.position, hitPoint
-                , other.transform, other.collider.GetComponent<MeshFilter>().mesh.triangles);
+            MergeCubes(tempVert, otherMeshtrans.position, hitPoint, 
+                other.transform, other.collider.GetComponent<MeshFilter>().mesh.triangles);
             
             Destroy(other.gameObject);
             runCollisionOnThis = false;
@@ -63,7 +67,8 @@ public class MergingDeez : MonoBehaviour
     public void MergeCubes(Vector3[] otherMeshVerts, Vector3 otherMeshPosition, Vector3 newMeshCentre, Transform otherMeshTransform, int[] otherMeshTris)
     {
         MeshFilter thisFilter = GetComponent<MeshFilter>();
-        
+
+        globalNewCentre = newMeshCentre;
         Vector3[] ourVerts = thisFilter.mesh.vertices;
         
         Debug.LogWarning($"mesh 1 vertices length: {ourVerts.Length} and mesh 2 vertice length is {otherMeshVerts.Length}");
@@ -121,7 +126,7 @@ public class MergingDeez : MonoBehaviour
         AppendArray(tris, thisFilter.mesh.triangles, 0);
         
         //external mesh
-        AppendArray(tris, otherMeshTris, 24); // --> offsetting by to bring to the middle of the vertice array for the second mesh being element 23
+        AppendArray(tris, otherMeshTris, thisFilter.mesh.vertices.Length); // --> offsetting by to bring to the middle of the vertice array for the second mesh being element 23
 
         mish.triangles = tris;
 
@@ -146,45 +151,17 @@ public class MergingDeez : MonoBehaviour
         mish.RecalculateNormals();
 
         MeshCollider collider = mergedMesh.AddComponent<MeshCollider>();
+        globalCollider = collider;
         collider.convex = true;
-
+        
         Vector3[] tempVerts2 = collider.sharedMesh.vertices;
-
+        
         int[] tempTris2 = collider.sharedMesh.triangles; 
         
         // mish.Clear();
         
         
-        //creation of new mesh
-        GameObject mergedMesh1 = Instantiate(new GameObject(), newMeshCentre, Quaternion.identity);
-
-        mergedMesh1.name = "merged";
         
-        
-        MeshFilter mf1 = mergedMesh1.AddComponent<MeshFilter>();
-        MeshRenderer mr1 = mergedMesh1.AddComponent<MeshRenderer>();
-
-        Mesh mish1 = new Mesh();
-        
-        mf1.mesh = collider.sharedMesh;
-        mf1.sharedMesh = collider.sharedMesh;
-        mish1.vertices = mf1.mesh.vertices;
-        mish1.triangles = mf1.mesh.triangles;
-        mr1.materials[0] = defaultMat;
-        
-        //uv generation
-        Vector2[] uvs1 = new Vector2[tempVerts2.Length];
-        
-        for (int i = 0; i < uvs1.Length; i++)
-        {
-            uvs1[i] = new Vector2(tempVerts2[i].x, tempVerts2[i].z);
-        }
-
-        mish1.uv = uvs1;
-        
-        // Recalculate bounds and normals
-        mish1.RecalculateBounds();
-        mish1.RecalculateNormals();
         
         Rigidbody rb = mergedMesh.AddComponent<Rigidbody>();
         rb.useGravity = false;
@@ -200,9 +177,13 @@ public class MergingDeez : MonoBehaviour
         md.tris = tris;
         md.closestVerticesTocentre = closestVerticesTocentre;
         md.defaultMat = defaultMat;
+
+        StartCoroutine(nameof(somehting));
+
         
-        Destroy(gameObject);
         
+       
+
     }
 
 
@@ -236,6 +217,38 @@ public class MergingDeez : MonoBehaviour
         }
 
         return closestPoints;
+    }
+
+    public IEnumerator somehting()
+    {
+
+        yield return new WaitForEndOfFrame();
+        //creation of new mesh
+        GameObject mergedMesh1 = Instantiate(new GameObject(), globalNewCentre, Quaternion.identity);
+        
+        mergedMesh1.name = "merged2";
+        
+        
+        MeshFilter mf1 = mergedMesh1.AddComponent<MeshFilter>();
+        MeshRenderer mr1 = mergedMesh1.AddComponent<MeshRenderer>();
+        
+        Mesh mish1 = new Mesh();
+        
+        mf1.mesh = globalCollider.sharedMesh;
+        mf1.sharedMesh = globalCollider.sharedMesh;
+        mish1.vertices = globalCollider.sharedMesh.vertices;
+        mish1.triangles = globalCollider.sharedMesh.triangles;
+        mr1.materials[0] = defaultMat;
+        
+        //uv generation
+        Vector2[] uvs1 = globalCollider.sharedMesh.uv;
+        
+        
+        // Recalculate bounds and normals
+        mish1.RecalculateBounds();
+        mish1.RecalculateNormals();
+        
+        gameObject.SetActive(false);
     }
     
     /// <summary>
