@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 450684703160655699}
   - component: {fileID: 3382142323251825629}
-  - component: {fileID: 164907830088823953}
   - component: {fileID: 7594371669936864670}
   m_Layer: 0
   m_Name: BubbleCam
@@ -85,14 +84,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &164907830088823953
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4409811508658892641}
-  m_Enabled: 1
 --- !u!114 &7594371669936864670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +282,7 @@ GameObject:
   - component: {fileID: 9005356397730479980}
   - component: {fileID: 3426058955527927910}
   - component: {fileID: 8689911477931146066}
+  - component: {fileID: 5527312512251943217}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -399,7 +391,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5146999066641127484}
   serializedVersion: 4
-  m_Mass: 1.1
+  m_Mass: 6
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -442,10 +434,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a63b101b5f3d0478751ffd02271877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 20
   strafeSpeed: 0.4
-  jumpPower: 10
-  groundDrag: 20
+  jumpPower: 50
+  isGrounded: 0
+  groundDrag: 5
+  sloping: 0
+  exitingSlope: 0
+  maxYSpeed: 6
+  canJump: 0
+  sphereRadius: 0.2
+  sphereOffset: {x: 0, y: -1, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 72
+--- !u!114 &5527312512251943217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146999066641127484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863d875d0fb91a34e9ead976776c7929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6249410745047562236
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +485,7 @@ Transform:
   m_GameObject: {fileID: 6249410745047562236}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0.749}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -640,10 +654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62bcc9f69f232842a843bc9a19c0fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleBullet: {fileID: 1486575616466686334, guid: c97c6083dee50f148ad2adf61cccf418, type: 3}
-  bubblePopperBullet: {fileID: 0}
+  bubbleBullet: {fileID: 1486575616466686334, guid: 8e70f1fee8f857249875d22b34e5b818, type: 3}
+  bubblePopperBullet: {fileID: 2709714718707710296, guid: e78f623d8f25d3a42be7e55a70986752, type: 3}
   gunTip: {fileID: 4408899353513454553}
   minBubbleSize: 0.5
   maxBubbleSize: 1.5
   bubbleBlowupTime: 1
-  shotSpeed: 10
+  shotSpeed: 40

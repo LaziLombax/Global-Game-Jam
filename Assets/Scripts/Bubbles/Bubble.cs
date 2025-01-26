@@ -8,7 +8,14 @@ public class Bubble : MonoBehaviour, IBubble
     [SerializeField] private float flotability;
     [SerializeField] private float lifetime;
     [SerializeField] private BubbleType type;
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.layer == 7)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        }
+    } 
     //Property implementation
     public float Radius
     {
