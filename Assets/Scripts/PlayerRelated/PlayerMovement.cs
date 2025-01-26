@@ -25,14 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     
-    Rigidbody rb;      
+    Rigidbody rb;
 
+    private string footprintsClip = "playerFoot";
+    private AudioSource asfp;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         defaultSpeed = moveSpeed;
         defaultStrafe = strafeSpeed;
+
+        asfp = GameManager.gm.audioLib.AddNewAudioSourceFromStandard("Player", gameObject, footprintsClip);
     }
 
     private void Update()
@@ -45,15 +50,16 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(!isGrounded)
         {
+            
             moveSpeed = airMulti;
             strafeSpeed = airMulti;
         }
         
-        if (hit.collider.gameObject.layer == 3 && !isMoving)
-        {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
+        // if (hit.collider.gameObject.layer == 3 && !isMoving)
+        // {
+        //     rb.linearVelocity = Vector3.zero;
+        //     rb.angularVelocity = Vector3.zero;
+        // }
         
     }
 
@@ -104,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
         }
         
         rb.AddForce(moveDirection * moveSpeed * 10, ForceMode.Impulse);
+        
+        
         
         if (isJumping)
         {
