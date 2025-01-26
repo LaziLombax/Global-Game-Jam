@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -24,6 +25,8 @@ public class Shoot : MonoBehaviour
 
     private AudioSource asb;
     private AudioSource asg;
+
+    public TextMeshProUGUI ammoTxt;
     
     /// <summary>
     /// string selectedMusicClip = musicClips[Random.Range(0,3)];
@@ -93,7 +96,8 @@ public class Shoot : MonoBehaviour
         bubbleResource -= (resource * resourceMultiplier);
 
         if (bubbleResource <= 0f) bubbleResource = 0f;
-        
+
+        ammoTxt.text = bubbleResource.ToString("00");
         Debug.LogWarning($"the new resource amount is: {bubbleResource}");
     }
 
@@ -103,6 +107,7 @@ public class Shoot : MonoBehaviour
 
         if (bubbleResource >= 20) bubbleResource = 20f;
         
+        ammoTxt.text = bubbleResource.ToString("00");
         Debug.LogWarning($"the new resource amount is: {bubbleResource}");
     }
     
