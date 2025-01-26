@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ProBuilder Data.meta
+guid: 53e50da955866ea418029b98928935df
+folderAsset: yes
+DefaultImporter:
+========
 guid: 0fa8ea26cffbfe842aeec7c453799841
 NativeFormatImporter:
+>>>>>>>> de:Assets/Audio/AudioLibrary.asset.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 

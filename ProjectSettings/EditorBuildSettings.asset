@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/peterCrying.unity
-    guid: 896960275fbce7b48b6c03dba84f808c
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 36d6d5c1b629bf846aaa6c48ce0ba827
+  - enabled: 1
+    path: Assets/Scenes/Level_One.unity
+    guid: 948d8c1a4f5091e4a98d84096f37506e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -14,8 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterMixer: {fileID: 0}
   myPlayerAudio:
-  - clipName: 
-    clipFile: {fileID: 0}
+  - clipName: BubbleCharge
+    clipFile: {fileID: 8300000, guid: 516ca08451b60884ebcb037bca0aa66b, type: 3}
     volume: 0.337
-  myGameAudio: []
-  myUIAudio: []
+  - clipName: BubbleLaunch
+    clipFile: {fileID: 8300000, guid: 256c6bebb524a9b47ae506ad2e21014b, type: 3}
+    volume: 0.337
+  myGameAudio:
+  - clipName: floatinggarden
+    clipFile: {fileID: 8300000, guid: 992edbd4701ceec479b8fbecec269422, type: 3}
+    volume: 0.14
+  - clipName: hearty
+    clipFile: {fileID: 8300000, guid: c6e1d68a03f22054dbdda4140e60ca66, type: 3}
+    volume: 0.14
+  - clipName: longnight
+    clipFile: {fileID: 8300000, guid: 09e4ef47821744e46a4ed6195a62afb9, type: 3}
+    volume: 0.14
+  - clipName: yesterday
+    clipFile: {fileID: 8300000, guid: 6d9b3f0a74e551242bf62eabd91662b5, type: 3}
+    volume: 0.14
+  - clipName: AmbientBirds
+    clipFile: {fileID: 8300000, guid: 77bcb5f26e7283242938aebf39f62c6f, type: 3}
+    volume: 0.14
+  myUIAudio:
+  - groupName: menubuttons
+    groupEntries:
+    - clipName: buttonhover
+      clipFile: {fileID: 8300000, guid: 88b7058f60a27fb458d2eb852e52342f, type: 3}
+      volume: 0
+    - clipName: buttonclick
+      clipFile: {fileID: 8300000, guid: 9a3d709f0c1a56f4c8cf452c4dca815e, type: 3}
+      volume: 0

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Cinemachine.meta
+guid: 3ba29c25acb883642a19d7e74ac1026b
+========
 guid: 26f34732d790d8840af7b58eb87a843f
+>>>>>>>> de:Assets/Scripts/MeshMerging.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

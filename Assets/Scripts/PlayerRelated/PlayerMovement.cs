@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     bool isJumping;
 
     //slope detection
-    private float maxSlopeAngle = 70f;
+    private float maxSlopeAngle = 60f;
     private RaycastHit slopeHit; //detects whether slope has been interacted with
     private bool slopExit;
 

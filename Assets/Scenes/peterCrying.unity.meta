@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Audio/TomAudio.meta
+guid: 45e3c836397f65c438626a63fd14099a
+folderAsset: yes
+========
 guid: 896960275fbce7b48b6c03dba84f808c
+>>>>>>>> de:Assets/Scenes/peterCrying.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
