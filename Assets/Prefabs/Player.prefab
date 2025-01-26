@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62bcc9f69f232842a843bc9a19c0fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleBullet: {fileID: 1486575616466686334, guid: 8e70f1fee8f857249875d22b34e5b818, type: 3}
+  bubbleBullet: {fileID: 1486575616466686334, guid: b54d331cdaba36b4a980f2ca7a1d2218, type: 3}
   bubblePopperBullet: {fileID: 2709714718707710296, guid: e78f623d8f25d3a42be7e55a70986752, type: 3}
   gunTip: {fileID: 4408899353513454553}
   minBubbleSize: 0.5
