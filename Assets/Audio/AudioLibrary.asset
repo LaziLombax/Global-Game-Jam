@@ -20,6 +20,9 @@ MonoBehaviour:
   - clipName: BubbleLaunch
     clipFile: {fileID: 8300000, guid: 256c6bebb524a9b47ae506ad2e21014b, type: 3}
     volume: 0.337
+  - clipName: playerFoot
+    clipFile: {fileID: 8300000, guid: c3802bb870ee9f74a95bb931b376b2e0, type: 3}
+    volume: 0.337
   myGameAudio:
   - clipName: floatinggarden
     clipFile: {fileID: 8300000, guid: 992edbd4701ceec479b8fbecec269422, type: 3}

@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,10 +20,37 @@ public class Shoot : MonoBehaviour
     GameObject heldBubble;
     private GameObject bubblePopper;
     
-    private void Update()
+    string selectedMusicClipBlow = "BubbleCharge";
+    string selectedMusicClipGun = "BubbleLaunch";
+
+    private AudioSource asb;
+    private AudioSource asg;
+
+    public TextMeshProUGUI ammoTxt;
+    
+    /// <summary>
+    /// string selectedMusicClip = musicClips[Random.Range(0,3)];
+            
+//    AudioSource musicSource = audioLib.AddNewAudioSourceFromStandard("GameManager", gameObject, selectedMusicClip);
+  //  musicSource.Play();
+
+  /// </summary>
+  ///
+  ///
+  private void Start()
+  {
+      asb = GameManager.gm.audioLib.AddNewAudioSourceFromStandard("Player", gameObject, selectedMusicClipBlow);
+      asg = GameManager.gm.audioLib.AddNewAudioSourceFromStandard("Player", gameObject, selectedMusicClipGun);
+      
+      //= musicClips[Random.Range(0,3)]
+  }
+
+  private void Update()
     {
         if (Input.GetMouseButtonDown(0) && bubbleResource > 0){
+            asg.Stop();
             heldBubble = Instantiate(bubbleBullet, gunTip.position, gunTip.localRotation);
+            asb.Play();
             // GameManager.gm.audioLib.
         }
 
@@ -39,6 +68,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && heldBubble)
         {
+            asb.Stop();
             ReleaseBullet();
         }
 
@@ -55,6 +85,7 @@ public class Shoot : MonoBehaviour
     {
         heldBubble.GetComponent<Rigidbody>().isKinematic = false;
         heldBubble.GetComponent<Rigidbody>().AddForce(gunTip.transform.up * shotSpeed, ForceMode.Impulse);
+        asg.Play();
         TakeResourceAway(1f);
         heldBubble = null;
         timeHeld = 0.0f;   
@@ -65,7 +96,8 @@ public class Shoot : MonoBehaviour
         bubbleResource -= (resource * resourceMultiplier);
 
         if (bubbleResource <= 0f) bubbleResource = 0f;
-        
+
+        ammoTxt.text = bubbleResource.ToString("00");
         Debug.LogWarning($"the new resource amount is: {bubbleResource}");
     }
 
@@ -75,6 +107,7 @@ public class Shoot : MonoBehaviour
 
         if (bubbleResource >= 20) bubbleResource = 20f;
         
+        ammoTxt.text = bubbleResource.ToString("00");
         Debug.LogWarning($"the new resource amount is: {bubbleResource}");
     }
     
