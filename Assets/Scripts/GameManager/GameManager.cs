@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        StartCoroutine(MusicHandler());
         if (gm != null && gm != this)
         {
             Destroy(this);
@@ -35,12 +36,6 @@ public class GameManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(this);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        StartCoroutine(MusicHandler());
     }
 
     // Update is called once per frame
