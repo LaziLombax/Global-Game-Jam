@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mapMenu; // Assign the map UI panel in the Inspector
     public GameObject settingsMenu; // Assign the settings UI panel in the Inspector
-
+    
     public void PlayButton()
     {
         mapMenu.SetActive(true); // Show the map menu
