@@ -14,6 +14,8 @@ Material:
   m_ValidKeywords:
   - _MK_ALBEDO_MAP
   - _MK_ARTISTIC_ANIMATION_STUTTER
+  - _MK_ARTISTIC_DRAWN
+  - _MK_ARTISTIC_PROJECTION_SCREEN_SPACE
   - _MK_ENVIRONMENT_REFLECTIONS_AMBIENT
   - _MK_LIGHT_CEL
   - _MK_RECEIVE_SHADOWS
@@ -68,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DrawnMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 310c14d88834b1d42b9766262348858e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -159,9 +161,9 @@ Material:
     - _AlembicMotionVectors: 0
     - _AlphaClipping: 0
     - _AlphaCutoff: 0.5
-    - _Artistic: 0
-    - _ArtisticFrequency: 1
-    - _ArtisticProjection: 0
+    - _Artistic: 1
+    - _ArtisticFrequency: 2.55
+    - _ArtisticProjection: 1
     - _ArtisticShadowFilter: 0
     - _Blend: 0
     - _BlendDst: 0
