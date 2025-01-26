@@ -228,8 +228,8 @@ Material:
     - _IridescenceThresholdOffset: 0
     - _Light: 2
     - _LightBands: 3
-    - _LightBandsScale: 1
-    - _LightThreshold: 1
+    - _LightBandsScale: 0.932
+    - _LightThreshold: 0.418
     - _Metallic: 0
     - _NormalMapIntensity: 1
     - _OcclusionStrength: 1
@@ -273,9 +273,9 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _AlbedoColor: {r: 0.40521887, g: 0.690566, b: 0.5349221, a: 1}
+    - _AlbedoColor: {r: 0.41894704, g: 0.6901961, b: 0.40392157, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.40521884, g: 0.690566, b: 0.53492206, a: 1}
+    - _Color: {r: 0.418947, g: 0.6901961, b: 0.40392154, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GoochBrightColor: {r: 0.87169814, g: 0.87169814, b: 0.87169814, a: 1}
