@@ -9,6 +9,18 @@ public class GameManager : MonoBehaviour
 
     public AudioData audioLib;
 
+    public Transform currentSpawnPoint;
+    public Transform player;
+
+    private static GameManager _instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            _instance = FindAnyObjectByType<GameManager>();
+            return _instance;
+        }
+    }
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -26,12 +38,17 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void RespawnPlayer()
+    {
+        player.position = currentSpawnPoint.position;
+        player.rotation = currentSpawnPoint.rotation;
     }
 }
