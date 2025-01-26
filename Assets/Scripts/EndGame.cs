@@ -6,7 +6,7 @@ public class EndGame : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            GameManager.Instance.RespawnPlayer();
+            Respawning.Instance.RespawnPlayer();
         }
     }
 }

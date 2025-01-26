@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
 
     public AudioData audioLib;
 
-    public Transform currentSpawnPoint;
-    public Transform player;
 
     private static GameManager _instance;
     public static GameManager Instance
@@ -25,7 +23,6 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        StartCoroutine(MusicHandler());
         if (gm != null && gm != this)
         {
             Destroy(this);
@@ -39,16 +36,11 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        StartCoroutine(nameof(MusicHandler));
     }
 
-    public void RespawnPlayer()
-    {
-        player.position = currentSpawnPoint.position;
-        player.rotation = currentSpawnPoint.rotation;
-    }
     
     IEnumerator MusicHandler ()
     {

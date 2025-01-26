@@ -7,7 +7,7 @@ public class SetSpawn : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.Instance.currentSpawnPoint = spawnTransform;
+            Respawning.Instance.currentSpawnPoint = spawnTransform;
         }
     }
 }
