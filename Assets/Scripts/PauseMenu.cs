@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu; // Assign the pause menu UI panel in the Inspector
     private bool isPaused = false;
+
+    public CameraMovement camMove;
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     void Update()
     {
@@ -19,6 +28,10 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
+        camMove.isDisabled = true;
         isPaused = true;
         Time.timeScale = 0; // Freeze the game
         pauseMenu.SetActive(true); // Show the pause menu
@@ -26,6 +39,10 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
+        camMove.isDisabled = false;
         isPaused = false;
         Time.timeScale = 1; // Resume the game
         pauseMenu.SetActive(false); // Hide the pause menu
@@ -34,7 +51,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1; // Ensure the game isn't frozen when returning to the main menu
-        SceneManager.LoadScene("MainMenu"); // Load the main menu scene
+        SceneManager.LoadScene("TitleScreen"); // Load the main menu scene
     }
 
     public void QuitGame()

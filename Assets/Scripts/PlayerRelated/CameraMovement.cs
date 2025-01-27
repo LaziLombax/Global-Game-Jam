@@ -1,7 +1,14 @@
+using System;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    public bool isDisabled = false;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
@@ -10,7 +17,9 @@ public class CameraMovement : MonoBehaviour
     
 
     private void Update()
-    { 
+    {
+        if (isDisabled) return;
+        
         transform.Rotate(new Vector3(0.0f, Input.mousePositionDelta.x, 0.0f));
         Camera.main.transform.Rotate(-Input.mousePositionDelta.y, 0.0f, 0.0f);
 
